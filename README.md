@@ -5,7 +5,12 @@ Use MVVM with Retrofit and Coroutines with Hilt as DI. Navigation through Arch C
 
 - Kotlin
 - MVVM
-- Navigation
+    - Lifecycle
+    - LiveData
+    - ViewModel
+    - Room
+    - Navigation
 - Coroutines
 - Retrofit
-- Hilt
+- Moshi
+- Hilt or Kotlin
