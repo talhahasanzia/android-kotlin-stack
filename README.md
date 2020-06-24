@@ -13,7 +13,7 @@ Use MVVM with Retrofit and Coroutines with Hilt as DI. Navigation through Arch C
 - Coroutines
 - Retrofit
 - Moshi
-- Hilt or Kotlin
+- Hilt or Koin
 - Extras
     - Lottie
     - Picasso
