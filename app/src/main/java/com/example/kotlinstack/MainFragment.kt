@@ -14,7 +14,7 @@ import kotlinx.android.synthetic.main.fragment_main.*
 class MainFragment : Fragment() {
 
     // Shared viewModel
-    private val viewModel  by activityViewModels<DefaultMainViewModel>()
+    private val viewModel: MainViewModel by activityViewModels<DefaultMainViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

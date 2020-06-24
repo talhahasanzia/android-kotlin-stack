@@ -1,13 +1,17 @@
 package com.example.kotlinstack
 
-import androidx.hilt.lifecycle.ViewModelInject
 import kotlinx.coroutines.delay
-import javax.inject.Inject
+import retrofit2.Retrofit
 
-class DefaultMainRepo{
+class DefaultMainRepo(private val apiHelper: ApiHelper) : MainRepo {
 
-    suspend fun getData(): String {
-        // Some blocking tasks, retrofit call
+    override suspend fun getData(): String {
+        // Some blocking tasks, retrofit call using API helper
+//        val result = apiHelper.getData()
+//        when(result){
+//            is Result.Success -> result.data // do processing with data, pass/return this data to viewmodel
+//            is Result.Failure -> result.message // do something with error message
+//        }
         delay(3000)
         return "Hello world"
     }
