@@ -16,5 +16,5 @@ Use MVVM with Retrofit and Coroutines with Hilt as DI. Navigation through Arch C
 - Hilt or Kotlin
 - Extras
     - Lottie
-    - Glide
+    - Picasso
     - Ktx for all arch components
