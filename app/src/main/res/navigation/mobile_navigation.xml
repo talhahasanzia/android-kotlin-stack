@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@+id/home_dest">
+    <fragment
+        android:id="@+id/home_dest"
+        android:name="com.example.kotlinstack.MainFragment"
+        android:label="@string/main"
+        tools:layout="@layout/fragment_main">
+
+        <argument
+            android:name="message"
+            android:defaultValue="No message"
+            app:argType="string" />
+
+        <!--<action
+            android:id="@+id/next_action"
+            app:destination="@id/flow_step_one_dest"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />-->
+    </fragment>
+
+<!-- From Jetpack navigation codelabs.  See https://codelabs.developers.google.com/codelabs/android-navigation/index.html
+
+    <fragment
+        android:id="@+id/flow_step_one_dest"
+        android:name="com.example.android.codelabs.navigation.FlowStepFragment"
+        tools:layout="@layout/flow_step_one_fragment">
+        <argument
+            android:name="flowStepNumber"
+            android:defaultValue="1"
+            app:argType="integer" />
+
+        <action
+            android:id="@+id/next_action"
+            app:destination="@+id/flow_step_two_dest"></action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/flow_step_two_dest"
+        android:name="com.example.android.codelabs.navigation.FlowStepFragment"
+        tools:layout="@layout/flow_step_two_fragment">
+
+        <argument
+            android:name="flowStepNumber"
+            android:defaultValue="2"
+            app:argType="integer" />
+
+        <action
+            android:id="@+id/next_action"
+            app:popUpTo="@id/home_dest"></action>
+    </fragment>
+
+    &lt;!&ndash; TODO STEP 4 Create a new navigation destination pointing to SettingsFragment &ndash;&gt;
+    &lt;!&ndash;<fragment&ndash;&gt;
+    &lt;!&ndash;android:id="@+id/settings_dest"&ndash;&gt;
+    &lt;!&ndash;android:name="com.example.android.codelabs.navigation.SettingsFragment"&ndash;&gt;
+    &lt;!&ndash;android:label="@string/settings"&ndash;&gt;
+    &lt;!&ndash;tools:layout="@layout/settings_fragment" />&ndash;&gt;
+    &lt;!&ndash; TODO END STEP 4 &ndash;&gt;
+
+    <fragment
+        android:id="@+id/deeplink_dest"
+        android:name="com.example.android.codelabs.navigation.DeepLinkFragment"
+        android:label="@string/deeplink"
+        tools:layout="@layout/deeplink_fragment">
+
+        <argument
+            android:name="myarg"
+            android:defaultValue="Android!" />
+        <deepLink app:uri="www.example.com/{myarg}" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/settings_dest"
+        android:name="com.example.android.codelabs.navigation.SettingsFragment"
+        android:label="settings_fragment"
+        tools:layout="@layout/settings_fragment" />
+-->
+</navigation>
