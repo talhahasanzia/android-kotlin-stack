@@ -50,6 +50,9 @@ ext.retrofit_moshi = "2.4.0"
 ext.retrofit_ktx = "0.9.2"
 ext.retrofit_logging = "4.2.1"
 
+// Easy permissions
+ext.easy_permissions = "3.0.0"
+
 // Picasso
 ext.picasso = "2.71828"
 

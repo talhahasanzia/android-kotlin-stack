@@ -74,6 +74,9 @@ dependencies {
     implementation "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:$retrofit_ktx"
     implementation "com.squareup.okhttp3:logging-interceptor:$retrofit_logging"
 
+    // Permissions library (Recommended by Google in their official samples: https://github.com/googlesamples/easypermissions)
+    implementation "pub.devrel:easypermissions:$easy_permissions"
+
     //Picasso
     implementation "com.squareup.picasso:picasso:$picasso"
 
