@@ -47,11 +47,10 @@ dependencies {
     //Pagination
     implementation "androidx.paging:paging-runtime:$arch_paging"
 
-
     //DI - Koin
-//    implementation "org.koin:koin-android:$koin"
-//    implementation "org.koin:koin-core:$koin"
-//    implementation "org.koin:koin-androidx-viewmodel:$koin"
+    implementation "org.koin:koin-android:$koin"
+    implementation "org.koin:koin-core:$koin"
+    implementation "org.koin:koin-androidx-viewmodel:$koin"
 
     // DI- Hilt
     implementation "com.google.dagger:hilt-android:$hilt_version"
@@ -65,8 +64,6 @@ dependencies {
     implementation "com.google.dagger:dagger-android-support:$dagger_android"
     kapt "com.google.dagger:dagger-compiler:$dagger"
     kapt "com.google.dagger:dagger-android-processor:$dagger_android"
-
-
 
     //Networking
     implementation "com.squareup.retrofit2:retrofit:$retrofit"
