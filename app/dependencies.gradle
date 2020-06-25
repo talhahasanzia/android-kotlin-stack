@@ -41,8 +41,6 @@ dependencies {
     implementation "androidx.navigation:navigation-fragment-ktx:$arch_navigation_version"
     implementation "androidx.navigation:navigation-ui-ktx:$arch_navigation_version"
     implementation "androidx.navigation:navigation-runtime-ktx:$arch_navigation_version"
-    implementation "androidx.navigation:navigation-fragment-ktx:$arch_navigation_version"
-    implementation "androidx.navigation:navigation-ui-ktx:$arch_navigation_version"
 
     //Pagination
     implementation "androidx.paging:paging-runtime:$arch_paging"

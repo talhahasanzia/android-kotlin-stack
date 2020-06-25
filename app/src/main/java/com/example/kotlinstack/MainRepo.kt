@@ -7,7 +7,7 @@ class DefaultMainRepo(private val apiHelper: ApiHelper) : MainRepo {
 
     override suspend fun getData(): String {
         // Some blocking tasks, retrofit call using API helper
-//        val result = apiHelper.getData()
+        val result = apiHelper.getData()
 //        when(result){
 //            is Result.Success -> result.data // do processing with data, pass/return this data to viewmodel
 //            is Result.Failure -> result.message // do something with error message
