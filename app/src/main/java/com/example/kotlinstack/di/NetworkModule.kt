@@ -1,7 +1,6 @@
-package com.example.kotlinstack
+package com.example.kotlinstack.di
 
 import com.squareup.moshi.Moshi
-import com.squareup.moshi.adapters.PolymorphicJsonAdapterFactory
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
 import dagger.Provides
@@ -20,7 +19,7 @@ object NetworkModule {
     fun provideClient(okHttpClient: OkHttpClient, moshiConverterFactory: MoshiConverterFactory) =
         Retrofit
             .Builder()
-            .baseUrl("https://www.google.com")
+            .baseUrl("https://api.openweathermap.org")
             .client(okHttpClient)
             .addConverterFactory(moshiConverterFactory)
             .build()
@@ -36,11 +35,7 @@ object NetworkModule {
 
     @Provides
     fun provideMoshi() = Moshi.Builder()
-        .add(
-            PolymorphicJsonAdapterFactory.of(Result::class.java, Result::class.java.simpleName)
-                .withSubtype(Result.Success::class.java, Result.Success::class.java.simpleName)
-                .withSubtype(Result.Failure::class.java, Result.Failure::class.java.simpleName)
-        )
         .add(KotlinJsonAdapterFactory())
         .build()
+
 }

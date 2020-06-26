@@ -45,7 +45,7 @@ ext.dagger_android = "2.27"
 
 // Retrofit
 ext.retrofit = "2.6.2"
-ext.moshi = "1.8.0"
+ext.moshi = "1.9.3"
 ext.retrofit_moshi = "2.4.0"
 ext.retrofit_ktx = "0.9.2"
 ext.retrofit_logging = "4.2.1"

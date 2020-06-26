@@ -1,4 +1,4 @@
-package com.example.kotlinstack
+package com.example.kotlinstack.application
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp
