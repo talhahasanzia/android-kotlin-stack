@@ -57,21 +57,27 @@ dependencies {
     kapt "androidx.hilt:hilt-compiler:$hilt_compiler"
 
     // DI - dagger
-    implementation "com.google.dagger:dagger:$dagger"
-    implementation "com.google.dagger:dagger-android:$dagger_android"
-    implementation "com.google.dagger:dagger-android-support:$dagger_android"
-    kapt "com.google.dagger:dagger-compiler:$dagger"
-    kapt "com.google.dagger:dagger-android-processor:$dagger_android"
+//    implementation "com.google.dagger:dagger:$dagger"
+//    implementation "com.google.dagger:dagger-android:$dagger_android"
+//    implementation "com.google.dagger:dagger-android-support:$dagger_android"
+//    kapt "com.google.dagger:dagger-compiler:$dagger"
+//    kapt "com.google.dagger:dagger-android-processor:$dagger_android"
 
     //Networking
     implementation "com.squareup.retrofit2:retrofit:$retrofit"
-    implementation "com.squareup.retrofit2:converter-moshi:$retrofit_moshi"
-    implementation "com.squareup.moshi:moshi-kotlin:$moshi"
-    // To allow used sealed classes
-    implementation"com.squareup.moshi:moshi-adapters:$moshi"
-    //kapt "com.squareup.moshi:moshi-kotlin-codegen:$moshi"
+
     implementation "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:$retrofit_ktx"
     implementation "com.squareup.okhttp3:logging-interceptor:$retrofit_logging"
+
+    // Moshi
+    implementation "com.squareup.retrofit2:converter-moshi:$retrofit_moshi"
+    implementation "com.squareup.moshi:moshi-kotlin:$moshi"
+    implementation"com.squareup.moshi:moshi-adapters:$moshi"
+    //apt "com.squareup.moshi:moshi-kotlin-codegen:$moshi"
+
+    // Gson
+    //implementation "com.squareup.retrofit2:converter-gson:$gson_converter"
+    //implementation "com.google.code.gson:gson:$gson"
 
     // Permissions library (Recommended by Google in their official samples: https://github.com/googlesamples/easypermissions)
     implementation "pub.devrel:easypermissions:$easy_permissions"

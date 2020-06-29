@@ -7,13 +7,13 @@ apply plugin: 'dagger.hilt.android.plugin'
 apply plugin: 'androidx.navigation.safeargs.kotlin'
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion "29.0.3"
+    compileSdkVersion 30
+    buildToolsVersion "30.0.0"
 
     defaultConfig {
         applicationId "com.example.kotlinstack"
         minSdkVersion 21
-        targetSdkVersion 29
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
 
@@ -21,6 +21,10 @@ android {
     }
 
     buildTypes {
+        debug {
+            minifyEnabled false
+            buildConfigField "String", "OPEN_WEATHER_API", "\"${System.getenv("OPEN_WEATHER_API_KEY")}\""
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'

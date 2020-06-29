@@ -2,9 +2,10 @@ package com.example.kotlinstack.di
 
 import com.example.kotlinstack.data.remote.ApiHelper
 import com.example.kotlinstack.data.remote.DefaultApiHelper
-import com.example.kotlinstack.data.remote.MainApiService
+import com.example.kotlinstack.data.remote.WeatherApiService
 import com.example.kotlinstack.data.repos.DefaultWeatherRepo
 import com.example.kotlinstack.data.repos.WeatherRepo
+import com.squareup.moshi.Moshi
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
@@ -21,10 +22,11 @@ object HomeModule {
         DefaultWeatherRepo(apiHelper)
 
     @Provides
-    fun providesMainApiService(mainApiService: MainApiService) : ApiHelper = DefaultApiHelper(mainApiService)
+    fun providesMainApiService(moshi: Moshi, weatherApiService: WeatherApiService): ApiHelper =
+        DefaultApiHelper(moshi, weatherApiService)
 
     @Provides
-    fun provideMainApiService(retrofit: Retrofit) = retrofit.create(MainApiService::class.java)
+    fun provideMainApiService(retrofit: Retrofit) = retrofit.create(WeatherApiService::class.java)
 
 }
 

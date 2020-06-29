@@ -1,6 +1,11 @@
 package com.example.kotlinstack.data.remote
 
-sealed class ResponseModel<T>
 
-data class Success<T>(val data: T) : ResponseModel<T>()
-data class Failure<T>(val code: Int, val message: String) : ResponseModel<T>()
+sealed class Result<out T> {
+    data class Success<out T>(val value: T): Result<T>()
+    data class Error(val code: Int? = null, val error: ErrorResponse? = null): Result<Nothing>()
+    object NetworkError: Result<Nothing>()
+}
+
+// TODO: Map to specific error response
+data class ErrorResponse(val code : Int)

@@ -3,8 +3,8 @@ package com.example.kotlinstack.home.vm
 import androidx.hilt.Assisted
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.*
-import com.example.kotlinstack.data.remote.Failure
-import com.example.kotlinstack.data.remote.Success
+import com.example.kotlinstack.data.models.WeatherModel
+import com.example.kotlinstack.data.remote.Result
 import com.example.kotlinstack.data.repos.WeatherRepo
 import com.example.kotlinstack.utils.ErrorMessageParser
 import kotlinx.coroutines.launch
@@ -27,12 +27,20 @@ class DefaultHomeViewModel @ViewModelInject constructor(
     init {
         viewModelScope.launch {
             when (val result = weatherRepo.getData()) {
-                is Success -> _weatherUpdate.value =
-                    "Current temperature is ${result.data.main.temp}"
-                is Failure -> _weatherError.value = errorMessageParser.getErrorMessage(result.code)
+                is Result.Success -> showTemperature(result)
+                is Result.Error -> showError(result)
             }
         }
     }
+
+    private fun showTemperature(result: Result.Success<WeatherModel>) {
+        _weatherUpdate.value = "Current temperature is ${result.value.main.temp}"
+    }
+
+    private fun showError(result: Result.Error) {
+        _weatherError.value = errorMessageParser.getErrorMessage(result.code ?: -1)
+    }
+
 
 }
 

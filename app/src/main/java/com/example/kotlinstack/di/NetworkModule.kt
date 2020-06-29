@@ -16,7 +16,10 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 object NetworkModule {
     // retrofit stuff here
     @Provides
-    fun provideClient(okHttpClient: OkHttpClient, moshiConverterFactory: MoshiConverterFactory) =
+    fun provideClient(
+        okHttpClient: OkHttpClient,
+        moshiConverterFactory: MoshiConverterFactory
+    ): Retrofit =
         Retrofit
             .Builder()
             .baseUrl("https://api.openweathermap.org")
@@ -31,10 +34,11 @@ object NetworkModule {
 
 
     @Provides
-    fun providesMoshiFactory(moshi: Moshi) = MoshiConverterFactory.create(moshi)
+    fun providesMoshiFactory(moshi: Moshi): MoshiConverterFactory =
+        MoshiConverterFactory.create(moshi)
 
     @Provides
-    fun provideMoshi() = Moshi.Builder()
+    fun provideMoshi(): Moshi = Moshi.Builder()
         .add(KotlinJsonAdapterFactory())
         .build()
 
