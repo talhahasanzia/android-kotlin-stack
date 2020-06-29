@@ -33,7 +33,7 @@ class HomeFragment : Fragment() {
             false
         )
 
-        binding.homeViewModel = viewModel as DefaultHomeViewModel
+        binding.homeViewModel = viewModel
 
         binding.lifecycleOwner = viewLifecycleOwner
 
