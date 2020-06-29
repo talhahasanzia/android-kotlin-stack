@@ -1,16 +1,19 @@
 package com.example.kotlinstack.data.repos
 
+import com.example.kotlinstack.BuildConfig
 import com.example.kotlinstack.data.models.WeatherModel
-import com.example.kotlinstack.data.remote.ApiHelper
 import com.example.kotlinstack.data.remote.Result
+import com.example.kotlinstack.data.remote.WeatherApiService
+import com.squareup.moshi.Moshi
+import javax.inject.Inject
 
-class DefaultWeatherRepo(private val apiHelper: ApiHelper) :
+class DefaultWeatherRepo @Inject constructor(moshi: Moshi, private val weatherApiService: WeatherApiService) :
+    DefaultRepo(moshi),
     WeatherRepo {
 
     override suspend fun getData(): Result<WeatherModel> {
-        // Some blocking tasks, retrofit call using API helper
-        // here only api is used, we can check of data is cached in database return that or both
-        return apiHelper.getData()
+        val apiKey = BuildConfig.OPEN_WEATHER_API
+        return safeApiCall { weatherApiService.getData(apiKey) }
 
     }
 }
