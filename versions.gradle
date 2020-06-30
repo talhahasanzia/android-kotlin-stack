@@ -9,6 +9,7 @@ ext.androidx_cardview="1.0.0"
 ext.androidx_appcompat = "1.1.0"
 ext.androidx_recyclerview = "1.1.0"
 ext.androidx_material= "1.1.0"
+ext.databinding = "3.1.4"
 
 // Constraint Layout
 ext.androidx_constraintlayout = "1.1.3"
